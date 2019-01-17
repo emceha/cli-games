@@ -72,7 +72,7 @@ class TicTacToe:
                 return 4
             return random.choice((0, 2, 6, 8))
 
-        # 1. check for win, 2. block
+        # check for win, or block
         state = self.state
         for symbol in "OX":
             for index in self.indxs:
