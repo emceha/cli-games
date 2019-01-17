@@ -1,2 +1,2 @@
  
-1. tictactoe (for now)
+1. tic-tac-toe (for now)
