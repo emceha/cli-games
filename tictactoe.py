@@ -139,6 +139,6 @@ def new_game(clrscr):
 
 if __name__ == "__main__":
     try:
-        new_game("cls" if "win" in sys.platform else "clear")
+        new_game("cls" if "win" in sys.platform.lower() else "clear")
     except (KeyboardInterrupt, EOFError):
         sys.exit("\n")
