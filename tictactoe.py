@@ -110,9 +110,9 @@ class TicTacToe:
         '''.format(*self.state)
 
 
-def new_game():
+def new_game(clrscr):
     while True:
-        os.system("clear")
+        os.system(clrscr)
         first = input("\n  WANNA GO FIRST ? (Y/N) ")
         if first.upper() in ("Y", "N"):
             break
@@ -122,7 +122,7 @@ def new_game():
     board = TicTacToe(order)
 
     while True:
-        os.system("clear")
+        os.system(clrscr)
         print(board)
 
         winner = board.check()
@@ -139,6 +139,6 @@ def new_game():
 
 if __name__ == "__main__":
     try:
-        new_game()
+        new_game("cls" if "win" in sys.platform else "clear")
     except (KeyboardInterrupt, EOFError):
         sys.exit("\n")
