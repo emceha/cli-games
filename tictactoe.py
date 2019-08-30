@@ -32,7 +32,7 @@ porks = {('O', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X'): (2, 6),
 
 class TicTacToe:
     def __init__(self, order="XO"):
-        self.__state = [' ' for _ in range(9)]
+        self.__state = [' '] * 9
         self.__order = order
 
     @property
