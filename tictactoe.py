@@ -32,7 +32,7 @@ porks = {('O', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X'): (2, 6),
 
 class TicTacToe:
     def __init__(self, order="XO"):
-        self.__state = [' ' for _ in range(9)]
+        self.__state = [' '] * 9
         self.__order = order
 
     @property
@@ -114,11 +114,12 @@ def new_game(clrscr):
     while True:
         os.system(clrscr)
         first = input("\n  WANNA GO FIRST ? (Y/N) ")
-        if first.upper() in ("Y", "N"):
+        if first.upper() in ("Y", "N", "YES", "NO"):
             break
 
     # comp -> O, human -> X
-    order = {"Y": "XO", "N": "OX"}.get(first.upper())
+    order = {"Y": "XO", "N": "OX",
+             "YES": "XO", "NO": "OX"}.get(first.upper())
     board = TicTacToe(order)
 
     while True:
